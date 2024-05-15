@@ -1,0 +1,100 @@
+@font-face {
+	font-family: "WorkSans";
+	src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf) format("truetype");
+}
+
+html {
+	/*Typography stuff*/
+	font-family: "WorkSans";
+}
+
+body {
+	/*Display stuff*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*Box model stuff*/
+	background-image: url(./assets/images/background-pattern-desktop.svg);
+	background-repeat: no-repeat;
+}
+
+main {
+	/*Display stuff*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/*Box model stuff*/
+	width: 100%;
+	max-width: 600px;
+	margin: 180px 0px;
+	padding: 40px;
+	border-radius: 10px;
+	background-color: hsl(0, 0%, 100%);
+	/*Miscellaneous*/
+	gap: 20px;
+	box-sizing: border-box;
+	box-shadow: 1px 1px 100px hsla(292, 42%, 14%, 0.237)
+}
+
+.title {
+	/*Display stuff*/
+	display: flex;
+	/*Miscellaneous*/
+	gap: 15px;
+}
+
+.title h1 {
+	/*Box model stuff*/
+	margin: 0;
+	/*Typography stuff*/
+	font-size: 45px;
+	color: hsl(292, 42%, 14%)
+}
+
+.faqs {
+	/*Display stuff*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/*Box model stuff*/
+	padding-top: 15px;
+	/*Miscellaneous*/
+	gap: 20px;
+}
+
+.faqs hr {
+	/*Box model stuff*/
+	width: 100%;
+	border: 1px solid hsl(275, 100%, 97%);
+}
+
+.faqs summary {
+	/*Display stuff*/
+	display: flex;
+	justify-content: space-between;
+	/*Typography stuff*/
+	font-size: 18px;
+	font-weight: 700;
+	color: hsl(292, 42%, 14%);
+	/*Manipulations stuff*/
+	transition: all ease .3s;
+	/*Miscellaneous*/
+	list-style: none;
+}
+
+.faqs summary:hover {
+	/*Typography stuff*/
+	color: #9019c9;
+	/*Manipulations stuff*/
+	transition: all ease .3s;
+	/*Miscellaneous*/
+	cursor: pointer;
+}
+
+.faqs p {
+	/*Box model stuff*/
+	padding-top: 25px;
+	/*Typography stuff*/
+	font-size: 16px;
+	color: hsl(292, 16%, 49%);
+}
