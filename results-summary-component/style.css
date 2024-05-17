@@ -1,0 +1,243 @@
+@font-face {
+	font-family: "HankenGrotesk";
+	src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf) format("truetype");
+}
+
+html {
+	/*Box model stuff*/
+	height: 100%;
+	/*Typography stuff*/
+	font-family: "HankenGrotesk";
+}
+
+body {
+	/*Display stuff*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*Box model stuff*/
+	height: 100%;
+}
+
+main {
+	/*Display stuff*/
+	display: flex;
+	justify-content: center;
+	/*Box model stuff*/
+	width: 100%;
+	max-width: 730px;
+	margin: 0 auto;
+	border-radius: 30px;
+	background-color: white;
+	/*Miscellaneous*/
+	box-shadow: 15px 15px 50px -20px #d0dbf8;
+}
+
+.result {
+	/*Display stuff*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/*Box model stuff*/
+	width: 100%;
+	max-width: 365px;
+	padding: 45px;
+	border-radius: 30px;
+	background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+	/*Miscellaneous*/
+	gap: 20px;
+	box-sizing: border-box;
+}
+
+.result h1 {
+	/*Box model stuff*/
+	margin: 0;
+	/*Typography stuff*/
+	font-size: 22px;
+	color: hsl(241, 100%, 89%);
+}
+
+.result .circle {
+	/*Display stuff*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/*Box model stuff*/
+	width: 175px;
+	height: 175px;
+	border-radius: 100%;
+	background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+}
+
+.result .circle span:first-child {
+	/*Typography stuff*/
+	font-size: 65px;
+	font-weight: 700;
+	color: white;
+}
+
+.result .circle span:last-child {
+	/*Typography stuff*/
+	color: hsl(241, 100%, 80%)
+}
+
+.result>span {
+	/*Typography stuff*/
+	font-size: 30px;
+	font-weight: 600;
+	color: white;
+}
+
+.result>p {
+	/*Typography stuff*/
+	font-size: 18px;
+	text-align: center;
+	color: hsl(241, 100%, 89%);
+}
+
+.summary {
+	/*Display stuff*/
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/*Box model stuff*/
+	width: 100%;
+	max-width: 365px;
+	padding: 45px;
+	/*Miscellaneous*/
+	gap: 20px;
+	box-sizing: border-box;
+}
+
+.summary h1 {
+	/*Box model stuff*/
+	margin: 0;
+	/*Typography stuff*/
+	font-size: 22px;
+	color: hsl(224, 30%, 27%);
+}
+
+.summary .skills {
+	/*Display stuff*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/*Miscellaneous*/
+	gap: 15px
+}
+
+.skill {
+	/*Display stuff*/
+	display: flex;
+	justify-content: flex-start;
+	/*Box model stuff*/
+	padding: 12px;
+	border-radius: 10px;
+	/*Miscellaneous*/
+	gap: 12px;
+}
+
+.reaction {
+	background-color: hsla(0, 100%, 67%, 0.05);
+}
+
+.memory {
+	background-color: hsla(39, 100%, 56%, 0.05)
+}
+
+.verbal {
+	background-color: hsla(166, 100%, 37%, 0.05);
+}
+
+.visual {
+	background-color: hsla(234, 85%, 45%, 0.05);
+}
+
+
+.reaction .skill-title {
+	color: hsl(0, 100%, 67%);
+}
+
+.memory .skill-title {
+	color: hsl(39, 100%, 56%);
+}
+
+
+.verbal .skill-title {
+	color: hsl(166, 100%, 37%)
+}
+
+.visual .skill-title {
+	color: hsl(234, 85%, 45%)
+}
+
+.skill-title {
+	font-weight: 600;
+}
+
+.skill-result {
+	/*Display stuff*/
+	display: flex;
+	justify-content: space-between;
+	/*Box model stuff*/
+	width: 100%;
+	border-radius: 10px;
+}
+
+.skill-score {
+	/*Typography stuff*/
+	font-weight: 800;
+	color: hsl(224, 30%, 27%);
+}
+
+.skill-100 {
+	/*Typography stuff*/
+	font-weight: 800;
+	color: #9ea0a3;
+}
+
+button {
+	/*Box model stuff*/
+	padding: 15px;
+	border: none;
+	border-radius: 30px;
+	background-color: hsl(224, 30%, 27%);
+	/*Typography stuff*/
+	font-family: "HankenGrotesk";
+	font-size: 18px;
+	color: white;
+	/*Manipulations stuff*/
+	transition: background-color ease-in .3s;
+}
+
+button:hover {
+	/*Box model stuff*/
+	background: linear-gradient(hsl(252, 100%, 67%) 0%, hsl(241, 81%, 54%) 100%);
+	/*Manipulations stuff*/
+	transition: brackground ease-in .3s;
+	/*Miscellaneous*/
+	cursor: pointer;
+}
+
+@media only screen and (width <=375px) {
+	html {
+		height: 100ch;
+	}
+
+	main {
+		margin: 0;
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.result {
+		border-top-right-radius: 0px;
+		border-top-left-radius: 0px;
+		max-width: 100%;
+	}
+
+	.summary {
+		max-width: 100%;
+	}
+}
