@@ -13,6 +13,10 @@ const CardDetails = () => {
     navigate("/");
   };
 
+  const handleBorderClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    navigate(`/${e.currentTarget.innerText.toLowerCase()}`)
+  }
+
   if (!isLoading && !countryDetails) return <NotFound />;
 
   if (isLoading)
@@ -81,17 +85,20 @@ const CardDetails = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 flex flex-wrap gap-4">
-                <strong>Borders: </strong>
-                {countryDetails.borders.map((border) => (
-                  <div
-                    key={border}
-                    className="rounded-md bg-white dark:bg-dark-blue px-6  shadow-md py-1"
-                  >
-                    {border}
-                  </div>
-                ))}
-              </div>
+              {countryDetails.borders.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-4">
+                  <strong>Borders: </strong>
+                  {countryDetails.borders.map((border) => (
+                    <div
+                      key={border}
+                      className="rounded-md bg-white dark:bg-dark-blue px-6 shadow-md py-1 cursor-pointer"
+                      onClick={handleBorderClick}
+                    >
+                      {border}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

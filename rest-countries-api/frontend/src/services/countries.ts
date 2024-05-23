@@ -1,4 +1,4 @@
-import { APIResponse } from "../api/types";
+import { APIResponse, Name } from "../api/types";
 import { CardData, CardDetailsData } from "../core/types";
 
 const BASE_URL = "https://restcountries.com/v3.1";
@@ -31,7 +31,7 @@ export async function getCountryDetails(
 
   if (!fetchData.ok) return Promise.reject();
 
-  const mappedResponse: CardDetailsData[] = data.map((details) => {
+  const mappedResponse: CardDetailsData = data.map((details) => {
     return {
       flag: details.flags.svg,
       name: details.name.common,
@@ -47,7 +47,22 @@ export async function getCountryDetails(
       languages: Object.values(details.languages || {}),
       borders: details.borders || [],
     };
-  });
+  })[0];
 
-  return mappedResponse[0];
+  mappedResponse.borders = await getBordersNames(mappedResponse.borders);
+
+  return mappedResponse;
+}
+
+async function getBordersNames(borders: string[]): Promise<string[]> {
+  const results = [];
+
+  for (const border of borders) {
+    const fetchData = await fetch(`${BASE_URL}/alpha/${border}?fields=name`);
+    const data = (await fetchData.json()) as {name: Name};
+
+    results.push(data.name.common);
+  }
+
+  return results;
 }
