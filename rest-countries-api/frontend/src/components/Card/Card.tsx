@@ -20,7 +20,7 @@ const Card: FC<CardProps> = ({ data }) => {
         <img
           src={flag}
           alt={`${country} flag`}
-          className="object-fill aspect-video max-w-full max-h-full bg-white rounded-t-md shadow-md dark:bg-dark-blue"
+          className="object-cover h-[150px] w-full bg-white rounded-t-md shadow-md dark:bg-dark-blue"
         />
       </picture>
       <div className="max-h-44 h-full w-full rounded-b-md bg-white dark:bg-dark-blue dark:text-white p-6 shadow-md">
